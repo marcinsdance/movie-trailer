@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import webbrowser
 import os
 import re
@@ -86,6 +87,7 @@ main_page_head = '''
 main_page_content = '''
 <!DOCTYPE html>
 <html lang="en">
+  {head}
   <body>
     <!-- Trailer Video Modal -->
     <div class="modal" id="trailer">
@@ -147,12 +149,26 @@ def open_movies_page(movies):
   output_file = open('fresh_tomatoes.html', 'w')
 
   # Replace the placeholder for the movie tiles with the actual dynamically generated content
-  rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+  rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies), head=main_page_head)
 
   # Output the file
-  output_file.write(main_page_head + rendered_content)
+  output_file.write(rendered_content)
   output_file.close()
 
   # open the output file in the browser
   url = os.path.abspath(output_file.name)
   webbrowser.open('file://' + url, new=2) # open in a new tab, if possible
+
+class Movie:
+	trailer_youtube_url = ""
+	title = ""
+	poster_image_url = ""
+
+limitless = Movie()
+limitless.trailer_youtube_url = "https://www.youtube.com/watch?v=QqMe6pwSfIE"
+limitless.poster_image_url = "http://cdn.movieweb.com/img.backdrops/FRb4u7HS71YJeg_1_a.jpg"
+limitless.title = "Limitless"
+
+movies = [limitless]
+
+open_movies_page(movies);
