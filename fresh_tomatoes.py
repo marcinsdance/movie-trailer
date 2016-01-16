@@ -159,16 +159,50 @@ def open_movies_page(movies):
   url = os.path.abspath(output_file.name)
   webbrowser.open('file://' + url, new=2) # open in a new tab, if possible
 
+# New 'Movie' class created to provide a thumbnail for the movie instances
 class Movie:
 	trailer_youtube_url = ""
 	title = ""
 	poster_image_url = ""
 
-limitless = Movie()
-limitless.trailer_youtube_url = "https://www.youtube.com/watch?v=QqMe6pwSfIE"
-limitless.poster_image_url = "http://cdn.movieweb.com/img.backdrops/FRb4u7HS71YJeg_1_a.jpg"
-limitless.title = "Limitless"
+# "Limitless" - new moview
+movie1 = Movie()
+movie1.title = "Limitless"
+movie1.poster_image_url = "http://cdn.movieweb.com/img.backdrops/FRb4u7HS71YJeg_1_a.jpg"
+movie1.trailer_youtube_url = "https://www.youtube.com/watch?v=QqMe6pwSfIE"
 
-movies = [limitless]
+# "Burnt" - new moview
+movie2 = Movie()
+movie2.title = "Burnt"
+movie2.poster_image_url = "http://e.movie.as/p/246390.jpg"
+movie2.trailer_youtube_url = "https://www.youtube.com/watch?v=QsyzkkI_g14"
 
+# "Only Lovers Left Alive" - new moview
+movie3 = Movie()
+movie3.title = "Only Lovers Left Alive"
+movie3.poster_image_url = "http://ia.media-imdb.com/images/M/MV5BMTY0NTQ1NjA0OV5BMl5BanBnXkFtZTgwMDg5NjkzMTE@._V1__SX1859_SY916_.jpg"
+movie3.trailer_youtube_url = "https://www.youtube.com/watch?v=ycOKvWrwYFo"
+
+# "Himalaya" - new moview
+movie4 = Movie()
+movie4.title = "Himalaya"
+movie4.poster_image_url = "http://1.fwcdn.pl/po/13/71/1371/6928413.3.jpg"
+movie4.trailer_youtube_url = "https://www.youtube.com/watch?v=vN--9D7rmlQ"
+
+# "Robin Hood: Men in Tights" - new moview
+movie5 = Movie()
+movie5.title = "Robin Hood: Men in Tights"
+movie5.poster_image_url = "https://www.movieposter.com/posters/archive/main/99/MPW-49670"
+movie5.trailer_youtube_url = "https://www.youtube.com/watch?v=dX4Ik-cyp-I"
+
+# "Robin Hood" - new moview
+movie6 = Movie()
+movie6.title = "Robin Hood"
+movie6.poster_image_url = "http://1.fwcdn.pl/po/06/61/430661/7326376.3.jpg"
+movie6.trailer_youtube_url = "https://www.youtube.com/watch?v=fQ6zXDSgwIY"
+
+# 'movies' list stores all movie objects
+movies = [movie1, movie2, movie3, movie4, movie5, movie6]
+
+# Finally execute the script and launch the page
 open_movies_page(movies);
